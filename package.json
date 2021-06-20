@@ -18,6 +18,6 @@
   },
   "scripts": {
     "build": "ts-node -T esbuild.ts",
-    "dev": "ts-node -T server.ts"
+    "start": "ts-node -T server.ts"
   }
 }
