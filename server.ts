@@ -1,11 +1,15 @@
-const fastify = require('fastify')()
-const path = require('path')
+import fastify from 'fastify'
+import path from 'path'
 
-fastify.register(require('fastify-static'), {
+const port = process?.env?.port ?? 3000
+
+const Fastify = fastify()
+
+Fastify.register(require('fastify-static'), {
   root: path.join(__dirname, 'dist')
 })
 
-fastify.listen(3000, (err, address) => {
+Fastify.listen(port, (err, address) => {
   if (err) throw err
   console.log(`Server is now listening on ${address}`)
 })
