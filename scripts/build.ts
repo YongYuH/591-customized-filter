@@ -3,7 +3,7 @@ import { BuildOptions, build } from 'esbuild'
 const buildOptions: BuildOptions = {
   bundle: true,
   entryPoints: ['./src/index.tsx'],
-  outdir: 'dist',
+  outdir: '../dist',
   sourcemap: true,
 }
 
