@@ -1,8 +1,6 @@
 {
   "**/*{.js,jsx,ts,tsx}": [
-    "yarn lint"
-  ],
-  "**/*.+(js|json)": [
-    "prettier --write"
+    "yarn lint",
+    "git add"
   ]
 }

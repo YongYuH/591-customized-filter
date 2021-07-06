@@ -24,8 +24,8 @@ const buildOptions: BuildOptions = {
         console.log('watch rebuild succeeded: ', result)
         bs.reload()
       }
-    }
-  }
+    },
+  },
 }
 
 const devApp = async () => {
@@ -33,9 +33,9 @@ const devApp = async () => {
     await build(buildOptions)
 
     Fastify.register(fastifyStatic, {
-      root: path.join(__dirname, '..', 'dist')
+      root: path.join(__dirname, '..', 'dist'),
     })
-    
+
     Fastify.listen(port, (err, address) => {
       if (err) throw err
       console.log(`Server is now listening on ${address}`)
