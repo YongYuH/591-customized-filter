@@ -1,5 +1,5 @@
 import browserSync from 'browser-sync'
-import { BuildOptions, build } from 'esbuild'
+import { build, BuildOptions } from 'esbuild'
 import fastify from 'fastify'
 import fastifyStatic from 'fastify-static'
 import path from 'path'
