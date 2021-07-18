@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "ts-node --transpile-only scripts/build.ts",
+    "clean": "ts-node --transpile-only scripts/clean.ts",
     "dev": "ts-node --transpile-only scripts/dev.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "lint-staged": "lint-staged",
