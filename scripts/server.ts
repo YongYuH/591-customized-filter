@@ -7,7 +7,7 @@ const port = process?.env?.port ?? 3000
 const Fastify = fastify()
 
 Fastify.register(fastifyStatic, {
-  root: path.join(__dirname, '..', 'dist'),
+  root: path.resolve(__dirname, '..', 'dist'),
 })
 
 Fastify.listen(port, (err, address) => {
