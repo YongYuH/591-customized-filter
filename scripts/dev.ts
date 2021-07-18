@@ -1,6 +1,7 @@
 import browserSync from 'browser-sync'
 import { BuildOptions, build } from 'esbuild'
 import fastify from 'fastify'
+import fastifyStatic from 'fastify-static'
 import path from 'path'
 
 const protocal = process?.env?.port || 'http'
@@ -23,18 +24,18 @@ const buildOptions: BuildOptions = {
         console.log('watch rebuild succeeded: ', result)
         bs.reload()
       }
-    }
-  }
+    },
+  },
 }
 
 const devApp = async () => {
   try {
     await build(buildOptions)
 
-    Fastify.register(require('fastify-static'), {
-      root: path.join(__dirname, 'dist')
+    Fastify.register(fastifyStatic, {
+      root: path.join(__dirname, '..', 'dist'),
     })
-    
+
     Fastify.listen(port, (err, address) => {
       if (err) throw err
       console.log(`Server is now listening on ${address}`)
