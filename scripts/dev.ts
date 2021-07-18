@@ -13,8 +13,8 @@ const Fastify = fastify()
 const bs = browserSync.create()
 const buildOptions: BuildOptions = {
   bundle: true,
-  entryPoints: ['./src/index.tsx'],
-  outdir: 'dist',
+  entryPoints: [path.resolve(__dirname, '..', 'src/index.tsx')],
+  outdir: path.resolve(__dirname, '..', 'dist'),
   sourcemap: true,
   watch: {
     onRebuild: (error, result) => {
@@ -33,7 +33,7 @@ const devApp = async () => {
     await build(buildOptions)
 
     Fastify.register(fastifyStatic, {
-      root: path.join(__dirname, '..', 'dist'),
+      root: path.resolve(__dirname, '..', 'dist'),
     })
 
     Fastify.listen(port, (err, address) => {

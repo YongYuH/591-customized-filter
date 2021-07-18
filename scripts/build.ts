@@ -1,9 +1,10 @@
 import { BuildOptions, build } from 'esbuild'
+import path from 'path'
 
 const buildOptions: BuildOptions = {
   bundle: true,
-  entryPoints: ['./src/index.tsx'],
-  outdir: '../dist',
+  entryPoints: [path.resolve(__dirname, '..', 'src/index.tsx')],
+  outdir: path.resolve(__dirname, '..', 'dist'),
   sourcemap: true,
 }
 
