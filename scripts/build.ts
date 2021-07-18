@@ -1,4 +1,4 @@
-import { BuildOptions, build } from 'esbuild'
+import { build, BuildOptions } from 'esbuild'
 import path from 'path'
 
 const buildOptions: BuildOptions = {
